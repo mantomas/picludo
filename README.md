@@ -1,6 +1,6 @@
 # Picludo
-From Latin: Pictura & Secludo - Image & Hide
-**Work in progress:**
+From Latin: Pictura & Secludo - Image & Hide \
+**Work in progress**
 ### dependencies
 - NumPy
 - Pillow
@@ -17,10 +17,12 @@ Simple functions to encrypting images. Will include two main functions: \
 
 ### split_pic()
 `split_pic("original.bmp")`
+
 ![split_pic.bmp](/img/split_pic.bmp)
 
 ### jpin_pics()
 `join_pics("out_B.bmp", "out_A.bmp", "recovered_original.jpg")`
+
 ![join_pics.bmp](/img/join_pics.bmp)
 
 ### to do
