@@ -44,5 +44,6 @@ def join_pics(file_A, file_B, output_name="original.bmp"):
 
 
 # testing functions, original.bmp included in working directory
-# split_pic("original.bmp")
-# join_pics("out_B.bmp", "out_A.bmp", "recovered_original.jpg")
+# uncomment next two lines to see how it works
+#split_pic("original.bmp")
+#join_pics("out_B.bmp", "out_A.bmp", "recovered_original.jpg")
