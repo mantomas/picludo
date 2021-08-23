@@ -5,7 +5,7 @@ From Latin: Pictura & Secludo - Image & Hide \
 - NumPy
 - Pillow
 ### basic functionality 
-Simple functions to encrypting images. Will include two main functions: \
+Simple functions to encrypting images. Will include two main functions and one helper function to generate random noise: \
 **split_pic()** use random NumPy array subtraction to make two separate images of random RGB noise. \
 **join_pics()** takes two noise images and recovers the original by simple addition. \
 **random_key()** noise map generator
