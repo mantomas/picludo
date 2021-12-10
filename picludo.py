@@ -53,12 +53,15 @@ class Picludo:
         output_name determines the file format, eg. BMP
         order of input images is NOT important
         """
-        input_a = Image.open(file_A)
-        input_b = Image.open(file_B)
-        array_from_input_a = np.asarray(input_a, dtype=np.uint8)
-        array_from_input_b = np.asarray(input_b, dtype=np.uint8)
-        add_array = array_from_input_a + array_from_input_b
-        Image.fromarray(add_array).save(output_name)
+        try:  # avoid different image sizes
+            input_a = Image.open(file_A)
+            input_b = Image.open(file_B)
+            array_from_input_a = np.asarray(input_a, dtype=np.uint8)
+            array_from_input_b = np.asarray(input_b, dtype=np.uint8)
+            add_array = array_from_input_a + array_from_input_b
+            Image.fromarray(add_array).save(output_name)
+        except ValueError:
+            pass
 
 
 # testing functions, original.bmp included in working directory
