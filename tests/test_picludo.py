@@ -1,11 +1,12 @@
+import os
 import numpy
+from pathlib import Path
 from ..picludo import Picludo
 
 
 def test_random_key():
     """
-    Create Picludo factory
-    Given field size to function random_key()
+    Given field size to method random_key()
 
     assert that returned object is:
         numpy.ndarray type
@@ -17,3 +18,37 @@ def test_random_key():
     assert isinstance(data, numpy.ndarray)
     assert data.shape == (100, 100, 3)
     assert isinstance(data[0][0][0], numpy.uint8)
+
+
+def test_split_image():
+    """
+    Given input image to method split_image()
+
+    assert:
+        two output files exist after execution
+    """
+    factory = Picludo()
+    factory.split_pic("original.bmp")
+    file_1 = Path("out_A.bmp")
+    file_2 = Path("out_B.bmp")
+    assert file_1.is_file()
+    assert file_2.is_file()
+
+
+def test_join_pics():
+    """
+    Given two noise images
+
+    assert:
+        new joined file is created
+    """
+    factory = Picludo()
+    factory.join_pics("out_A.bmp", "out_B.bmp", "test_out.bmp")
+    file_out = Path("test_out.bmp")
+    assert file_out.is_file()
+    try:
+        os.remove("out_A.bmp")
+        os.remove("out_B.bmp")
+        os.remove("test_out.bmp")
+    except Exception:
+        pass
