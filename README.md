@@ -5,10 +5,10 @@ From Latin: Pictura & Secludo - Image & Hide \
 - NumPy
 - Pillow
 ### basic functionality 
-Simple functions to encrypting images. Will include two main functions and one helper function to generate random noise: \
+One class **Picludo** with methods to encrypting and decrypting images. It includes two main methods and one helper function to generate random noise: \
 **split_pic()** use random NumPy array subtraction to make two separate images of random RGB noise. \
 **join_pics()** takes two noise images and recovers the original by simple addition. \
-**random_key()** noise map generator
+**random_key()** noise map generator \
 
 ### about
 - takes all Pillow supported formats with limitations to RGB and 8bit's per channel
@@ -24,6 +24,20 @@ Simple functions to encrypting images. Will include two main functions and one h
 `join_pics("out_B.bmp", "out_A.bmp", "recovered_original.jpg")`
 
 ![join_pics.bmp](/img/join_pics.bmp)
+
+### Sample usage
+```python
+from picludo import Picludo
+
+factory = Picludo()
+factory.split_pic("original.bmp")
+
+# two new image files 'out_A.bmp' and 'out_B.bmp'
+
+factory.join_pics("out_A.bmp", "out_B.bmp", "recovered.bmp")
+
+# joins (restores original) first two files into 'recovered.bmp' image
+```
 
 ### to do
 - handling exceptions 
