@@ -1,9 +1,10 @@
 import numpy
-from ..picludo import random_key
+from ..picludo import Picludo
 
 
 def test_random_key():
     """
+    Create Picludo factory
     Given field size to function random_key()
 
     assert that returned object is:
@@ -11,7 +12,8 @@ def test_random_key():
         propper shape of the array
         single RGB value is type numpy.uint8
     """
-    data = random_key(100, 100)
+    factory = Picludo()
+    data = factory.random_key(100, 100)
     assert isinstance(data, numpy.ndarray)
     assert data.shape == (100, 100, 3)
     assert isinstance(data[0][0][0], numpy.uint8)
