@@ -8,8 +8,8 @@ def random_key(width, height):
     helper function
     return uint8 data type RGB noise to keep 8 bit's per channel
     """
-    np_array = np.random.randint(0, 256, (height, width, 3))
-    return np.array(np_array, dtype=np.uint8)
+    np_array = np.random.randint(0, 256, (height, width, 3), dtype=np.uint8)
+    return np_array
 
 
 def split_pic(original_image, name_a="out_A.bmp", name_b="out_B.bmp"):
@@ -45,5 +45,6 @@ def join_pics(file_A, file_B, output_name="original.bmp"):
 
 # testing functions, original.bmp included in working directory
 # uncomment next two lines to see how it works
+
 #split_pic("original.bmp")
 #join_pics("out_B.bmp", "out_A.bmp", "recovered_original.jpg")
