@@ -29,14 +29,19 @@ One class **Picludo** with methods to encrypting and decrypting images. It inclu
 ```python
 from picludo import Picludo
 
+# can be used by creating instance of Picludo class
 factory = Picludo()
 factory.split_pic("original.bmp")
 
-# two new image files 'out_A.bmp' and 'out_B.bmp'
+# or directly
+Picludo.split_pic("original.bmp")
+# two new image files 'out_A.bmp' and 'out_B.bmp' are created
 
-factory.join_pics("out_A.bmp", "out_B.bmp", "recovered.bmp")
 
 # joins (restores original) first two files into 'recovered.bmp' image
+factory.join_pics("out_A.bmp", "out_B.bmp", "recovered.bmp")
+# or also directly
+Picludo.join_pics("out_A.bmp", "out_B.bmp", "recovered.bmp")
 ```
 
 ### to do

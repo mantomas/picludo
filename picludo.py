@@ -8,7 +8,7 @@ class Picludo:
     Depends on:
         Pillow - open and save images
         Numpy - create and manipulate noise maps
-    
+
     Methods:
         random_key(self, int, int)
         split_pic(self, image_path, name_a, name_b)
@@ -17,7 +17,7 @@ class Picludo:
     def __init__(self):
         pass
 
-
+    @classmethod
     def random_key(self, width, height):
         """NumPy array of given size
 
@@ -29,7 +29,7 @@ class Picludo:
         np_array = np.random.randint(0, 256, (height, width, 3), dtype=np.uint8)
         return np_array
 
-
+    @classmethod
     def split_pic(self, original_image, name_a="out_A.bmp", name_b="out_B.bmp"):
         """saving noise images
 
@@ -45,7 +45,7 @@ class Picludo:
         Image.fromarray(random_noise).save(name_a)  # img from noise map
         Image.fromarray(subtracted_array).save(name_b)  # img after subtraction
 
-
+    @classmethod
     def join_pics(self, file_A, file_B, output_name="recovered.bmp"):
         """joins two files in one
 
